@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AUREMONT - Products</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            AUREMONT
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html" class="active">Shop</a>
+            <a href="orders.html">Orders</a>
+            <a href="#">About</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <button class="search-btn">
+                🔍
+            </button>
+
+            <a href="cart.html" class="cart-btn">
+                🛒
+            </a>
+
+            <button class="menu-btn">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= PRODUCTS HEADER ================= -->
+
+    <section class="products-page">
+
+        <div class="products-heading">
+
+            <p class="small-title">
+                SHOP
+            </p>
+
+            <h1>
+                All Products
+            </h1>
+
+            <p>
+                Find something you love.
+            </p>
+
+        </div>
+
+
+        <!-- ================= SEARCH ================= -->
+
+        <div class="product-tools">
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="productSearch"
+                    placeholder="Search products..."
+                >
+
+            </div>
+
+
+            <select id="sortProducts">
+
+                <option value="default">
+                    Sort by
+                </option>
+
+                <option value="low">
+                    Price: Low to High
+                </option>
+
+                <option value="high">
+                    Price: High to Low
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- ================= CATEGORY FILTER ================= -->
+
+        <div class="category-list product-categories">
+
+            <button class="category-filter active" data-category="all">
+                All
+            </button>
+
+            <button class="category-filter" data-category="Fashion">
+                Fashion
+            </button>
+
+            <button class="category-filter" data-category="Shoes">
+                Shoes
+            </button>
+
+            <button class="category-filter" data-category="Accessories">
+                Accessories
+            </button>
+
+            <button class="category-filter" data-category="Electronics">
+                Electronics
+            </button>
+
+        </div>
+
+
+        <!-- ================= PRODUCT GRID ================= -->
+
+        <div class="product-grid" id="productGrid">
+
+
+            <!-- Product 1 -->
+
+            <div
+                class="product-card"
+                data-category="Fashion"
+                data-price="25"
+            >
+
+                <div class="product-image">
+                 <img src="images/tshirt.jpg" alt="Classic T-Shirt">
+                </div>
+
+                <div class="product-info">
+
+                    <p class="category">
+                        Fashion
+                    </p>
+
+                    <h3>
+                        Classic T-Shirt
+                    </h3>
+
+                    <strong>
+                        $25.00
+                    </strong>
+
+                    <button
+                        class="add-cart"
+                        data-name="Classic T-Shirt"
+                        data-price="25"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 2 -->
+
+            <div
+                class="product-card"
+                data-category="Shoes"
+                data-price="55"
+            >
+
+                <div class="product-image">
+                    <img src="images/shoes.jpg" alt="Urban Sneakers">
+                </div>
+
+                <div class="product-info">
+
+                    <p class="category">
+                        Shoes
+                    </p>
+
+                    <h3>
+                        Urban Sneakers
+                    </h3>
+
+                    <strong>
+                        $55.00
+                    </strong>
+
+                    <button
+                        class="add-cart"
+                        data-name="Urban Sneakers"
+                        data-price="55"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 3 -->
+
+            <div
+                class="product-card"
+                data-category="Accessories"
+                data-price="80"
+            >
+
+                <div class="product-image">
+                 <img src="images/watch.jpg" alt="Minimal Watch">
+                </div>
+
+                <div class="product-info">
+
+                    <p class="category">
+                        Accessories
+                    </p>
+
+                    <h3>
+                        Minimal Watch
+                    </h3>
+
+                    <strong>
+                        $80.00
+                    </strong>
+
+                    <button
+                        class="add-cart"
+                        data-name="Minimal Watch"
+                        data-price="80"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 4 -->
+
+            <div
+                class="product-card"
+                data-category="Electronics"
+                data-price="65"
+            >
+
+                <div class="product-image">
+                    <img src="images/headphones.jpg" alt="Wireless Headphones">
+                </div>
+
+                <div class="product-info">
+
+                    <p class="category">
+                        Electronics
+                    </p>
+
+                    <h3>
+                        Wireless Headphones
+                    </h3>
+
+                    <strong>
+                        $65.00
+                    </strong>
+
+                    <button
+                        class="add-cart"
+                        data-name="Wireless Headphones"
+                        data-price="65"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- JavaScript -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AUREMONT - Receipt</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            AUREMONT
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Receipt -->
+
+    <main class="receipt-page">
+
+        <div class="receipt">
+
+            <div class="receipt-header">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h1>
+                    Order Confirmed
+                </h1>
+
+                <p>
+                    Thank you for your purchase!
+                </p>
+
+            </div>
+
+
+            <!-- Order Info -->
+
+            <div class="receipt-info">
+
+                <div>
+                    <span>Order ID</span>
+                    <strong id="receiptOrderId">
+                        -
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Date</span>
+                    <strong id="receiptDate">
+                        -
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- Customer -->
+
+            <div class="receipt-section">
+
+                <h2>
+                    Delivery Information
+                </h2>
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="receiptName">-</span>
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    <span id="receiptPhone">-</span>
+                </p>
+
+                <p>
+                    <strong>Address:</strong>
+                    <span id="receiptAddress">-</span>
+                </p>
+
+                <p>
+                    <strong>Payment:</strong>
+                    <span id="receiptPayment">-</span>
+                </p>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- Products -->
+
+            <div class="receipt-section">
+
+                <h2>
+                    Order Items
+                </h2>
+
+                <div id="receiptItems">
+                    <!-- Items appear here -->
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- Total -->
+
+            <div class="receipt-total">
+
+                <div>
+                    <span>Subtotal</span>
+                    <strong id="receiptSubtotal">
+                        $0.00
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Shipping</span>
+                    <strong id="receiptShipping">
+                        $0.00
+                    </strong>
+                </div>
+
+                <div class="grand-total">
+                    <span>Total</span>
+                    <strong id="receiptTotal">
+                        $0.00
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="receipt-actions">
+
+                <button
+                    onclick="window.print()"
+                    class="print-receipt"
+                >
+                    🖨️ Print Receipt
+                </button>
+
+                <a
+                    href="index.html"
+                    class="back-home"
+                >
+                    ← Back to Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+    const order =
+        JSON.parse(localStorage.getItem("lastOrder"));
+
+    if (order) {
+
+        document.getElementById("receiptOrderId").textContent =
+            order.orderId;
+
+        document.getElementById("receiptDate").textContent =
+            order.date;
+
+        document.getElementById("receiptName").textContent =
+            order.name;
+
+        document.getElementById("receiptPhone").textContent =
+            order.phone;
+
+        document.getElementById("receiptAddress").textContent =
+            order.address;
+
+        document.getElementById("receiptPayment").textContent =
+            order.payment;
+
+
+        const itemsContainer =
+            document.getElementById("receiptItems");
+
+        itemsContainer.innerHTML = "";
+
+
+        order.items.forEach(item => {
+
+            const itemElement =
+                document.createElement("div");
+
+            itemElement.className =
+                "receipt-product";
+
+            itemElement.innerHTML = `
+                <div class="receipt-product-info">
+                    <strong>${item.name}</strong>
+                    <span>
+                        Quantity: ${item.quantity}
+                    </span>
+                </div>
+
+                <strong>
+                    $${(
+                        item.price * item.quantity
+                    ).toFixed(2)}
+                </strong>
+            `;
+
+            itemsContainer.appendChild(itemElement);
+
+        });
+
+
+        document.getElementById("receiptSubtotal")
+            .textContent =
+            `$${order.subtotal.toFixed(2)}`;
+
+        document.getElementById("receiptShipping")
+            .textContent =
+            `$${order.shipping.toFixed(2)}`;
+
+        document.getElementById("receiptTotal")
+            .textContent =
+            `$${order.total.toFixed(2)}`;
+
+    }
+</script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

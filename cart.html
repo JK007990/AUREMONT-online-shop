@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShopEase - Cart</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            ShopEase
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="orders.html">Orders</a>
+            <a href="#">About</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <a href="products.html" class="cart-btn">
+                🛍️
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= CART ================= -->
+
+    <main class="cart-page">
+
+        <div class="cart-heading">
+
+            <p class="small-title">
+                SHOPPING CART
+            </p>
+
+            <h1>
+                Your Cart
+            </h1>
+
+        </div>
+
+
+        <div class="cart-layout">
+
+            <!-- Cart Items -->
+
+            <div class="cart-items" id="cartItems">
+                <!-- JavaScript will add products here -->
+            </div>
+
+
+            <!-- Cart Summary -->
+
+            <aside class="cart-summary">
+
+                <h2>
+                    Order Summary
+                </h2>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <strong id="cartSubtotal">
+                        $0.00
+                    </strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <strong id="cartShipping">
+                        $0.00
+                    </strong>
+                </div>
+
+                <hr>
+
+                <div class="summary-total">
+                    <span>Total</span>
+                    <strong id="cartTotal">
+                        $0.00
+                    </strong>
+                </div>
+
+                <a
+                    href="checkout.html"
+                    class="checkout-btn"
+                >
+                    Checkout →
+                </a>
+
+                <a
+                    href="products.html"
+                    class="continue-shopping"
+                >
+                    ← Continue Shopping
+                </a>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
